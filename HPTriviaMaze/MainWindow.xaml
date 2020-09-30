@@ -1,0 +1,67 @@
+﻿<Window x:Name="winMainWindow" x:Class="HPTriviaMaze.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HPTriviaMaze"
+        mc:Ignorable="d"
+        Closing="MainWindow_Closing"
+        Title="Harry Potter Trivia Maze" Height="671.592" Width="922" WindowState="Normal" ResizeMode="NoResize">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FFAD87FD" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Menu x:Name="mnuMainMenu" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="916" FontSize="14">
+            <MenuItem x:Name="mnuFile" Header="_File" Height="33" Width="105">
+                <MenuItem x:Name="mnuNewGame" Header="_New Game" Height="33" Click="mnuNewGame_Click"/>
+                <MenuItem x:Name="mnuLoadGame" Header="_Load Game" Height="33" Click="mnuLoadGame_Click"/>
+                <MenuItem x:Name="mnuPauseGame" Header="_Pause Game" Height="33" Click="mnuPauseGame_Click"/>
+                <MenuItem x:Name="mnuSaveGame" Header="_Save Game" Height="39" RenderTransformOrigin="0.5,0.5" Click="mnuSaveGame_Click">
+                    <MenuItem.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="-1.397"/>
+                            <RotateTransform/>
+                            <TranslateTransform X="-0.476"/>
+                        </TransformGroup>
+                    </MenuItem.RenderTransform>
+                </MenuItem>
+                <MenuItem x:Name="mnuQuit" Header="_Quit Game" Height="39" Click="mnuQuit_Click"/>
+                <MenuItem x:Name="mnuExit" Header="E_xit" Height="39" Click="mnuExit_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="mnuAbout" Header="_About" Height="33" Width="100">
+                <MenuItem x:Name="mnuGameInfo" Header="About HP Trivia Maze" Height="33" Click="mnuGameInfo_Click"/>
+            </MenuItem>
+        </Menu>
+        <Image x:Name="CurrentRoomDisplay" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,174,0,0" Width="368" Height="296" Stretch="Fill"/>
+        <TextBlock x:Name="txtCurrentRoomLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Current Room" VerticalAlignment="Top" Margin="72,60,0,0" Width="368" Height="86" FontSize="20" FontWeight="Bold" TextAlignment="Center" Foreground="White" Visibility="Hidden"/>
+        <Canvas x:Name="mazeDisplay" HorizontalAlignment="Left" Height="288" VerticalAlignment="Top" Width="340" Margin="521,282,0,0" Visibility="Hidden">
+            <Canvas.Background>
+                <ImageBrush ImageSource="./images/mazeBackground.png"></ImageBrush>
+            </Canvas.Background>
+            <Rectangle x:Name="Character" Height="66" Width="76" Canvas.Left="9" Canvas.Top="7">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/images/potter_character.png" />
+                </Rectangle.Fill>
+            </Rectangle>
+        </Canvas>
+        <TextBlock x:Name="txtMazeInstructions" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="58,510,0,0" RenderTransformOrigin="-5.66,16.291" Width="387" FontSize="18" TextAlignment="Center" Height="60"/>
+        <TextBox x:Name="txtQuestionDisplay" IsReadOnly="True" HorizontalScrollBarVisibility="Visible" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="521,60,0,0" Width="340" Height="164" Visibility="Hidden" Foreground="#FFC9C1E6" FontSize="16" Background="{x:Null}" SelectionBrush="#FF8146EA" Cursor="Arrow"/>
+        <TextBox x:Name="txtboxAnswerSubmit" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" Margin="521,245,0,0" BorderBrush="#FF1C1528" Visibility="Hidden"/>
+        <Button x:Name="btnSubmitAnswer" Content="Submit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="63" Margin="798,246,0,0" Background="#FFBA9CF0" BorderBrush="#FF1C1528" Visibility="Hidden" Click="btnSubmitAnswer_Click" IsEnabled="False"/>
+        <TextBlock x:Name="txtWelcome" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Welcome to the Harry Potter Trivia Maze" VerticalAlignment="Top" Margin="125,119,0,0" Width="652" Height="121" FontSize="48" TextAlignment="Center" Foreground="#FFC9C1E6"/>
+        <Button x:Name="btnNewGame" Content="New Game" HorizontalAlignment="Left" VerticalAlignment="Top" Width="392" Margin="271,314,0,0" Height="72" Background="#FFC9C1E6" Foreground="#FF20192F" FontSize="24" Click="btnNewGame_Click"/>
+        <Button x:Name="btnLoadGame" Content="Load Game" HorizontalAlignment="Left" VerticalAlignment="Top" Width="392" Margin="271,420,0,0" Height="72" Background="#FFC9C1E6" Foreground="#FF20192F" FontSize="24" Click="btnLoadGame_Click"/>
+        <Button x:Name="btnUp" Content="Up" HorizontalAlignment="Left" VerticalAlignment="Top" Width="57" Margin="228,146,0,0" FontSize="14" FontWeight="Bold" Background="#FFC9C1E6" Foreground="#FF20192F" Visibility="Hidden" Click="btnUp_Click"/>
+        <Button x:Name="btnLeft" Content="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Width="57" Margin="12,314,0,0" FontSize="14" FontWeight="Bold" Background="#FFC9C1E6" Foreground="#FF20192F" Visibility="Hidden" Click="btnLeft_Click"/>
+        <Button x:Name="btnRight" Content="Right" HorizontalAlignment="Left" VerticalAlignment="Top" Width="57" Margin="443,313,0,0" FontSize="14" FontWeight="Bold" Background="#FFC9C1E6" Foreground="#FF20192F" Visibility="Hidden" Click="btnRight_Click"/>
+        <Button x:Name="btnDown" Content="Down" HorizontalAlignment="Left" VerticalAlignment="Top" Width="56" Margin="228,470,0,0" FontSize="14" FontWeight="Bold" Background="#FFC9C1E6" Foreground="#FF20192F" Visibility="Hidden" Click="btnDown_Click"/>
+        <TextBlock Foreground="White" VerticalAlignment="Center" Margin="12,598,806,9" Height="36" FontSize="18"  >Volume</TextBlock>
+        <MediaElement x:Name="mediaMusic" LoadedBehavior="Manual" Margin="261,598,416,12" Visibility="Hidden" MediaEnded="Music_MediaEnded"/>
+        <Slider Name="volumeSlider" VerticalAlignment="Center" ValueChanged="ChangeMediaVolume" Minimum="0" Maximum="1" Value="0.5" Margin="121,601,710,12" Height="30" Foreground="White"/>
+        
+    </Grid>
+</Window>
