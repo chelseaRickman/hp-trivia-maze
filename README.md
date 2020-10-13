@@ -4,8 +4,10 @@
 
 This was a school project I created for a .NET/C# course. It is a Harry Potter-themed trivia maze. The user starts at the entrance of the maze and must make their way to the exit. The maze is a 4x4 grid of rooms. To move to a room, the user must unlock the door by answering trivia questions correctly. If the user answers incorrectly, that door becomes permanently locked. If at any point the user permanently locks all of the doors leading out of the current room or locks the two doors that lead to the exit, the game is over.
 
+This application was created using the Microsoft Windows Presentation Foundation framework.
+
 ## Instructions
-This program was created using Microsoft's WPF, and therefore must be run from a Windows machine (see below for instructions for non-Windows users).
+This program is a Windows deskstop client application and therefore must be run from a Windows machine (see below for instructions for non-Windows users).
 
 Windows:
 
