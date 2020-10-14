@@ -7,7 +7,7 @@ This was a school project I created for a .NET/C# course. It is a Harry Potter-t
 This application was created using the Microsoft Windows Presentation Foundation framework.
 
 ## Instructions
-This program is a Windows deskstop client application and therefore must be run from a Windows machine (see below for instructions for non-Windows users).
+This program is a Windows deskstop client application and therefore must be run from a Windows machine.
 
 Windows:
 
@@ -18,13 +18,6 @@ Windows:
 - Navigate to the executable file: hp-trivia-maze-master/HPTriviaMaze/bin/Debug/HPTriviaMaze.exe
 - Double-click the HPTriviaMaze.exe file and the program will start.
 - Select "About" from the menu bar for more detailed instructions for playing the game
-
-Non-Windows:
-
-This program cannot be run from a non-Windows machine, so I have provided a video demonstration of the program
-- Navigate to the repo here: https://github.com/chelseaRickman/hp-trivia-maze
-- Click the hp_trivia_maze_demo video file
-- A video demonstration of the program will play
 
 ## What I Learned
 
